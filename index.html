@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>三项目 Action Tracker</title>
+<style>
+:root{--ink:#172033;--muted:#667085;--line:#dfe5ec;--paper:#f4f6f9;--blue:#1769aa;--danger:#b42318}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif}button,input{font:inherit}main{max-width:1680px;margin:auto;padding:42px 36px 54px}.hero{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:26px}.eyebrow{margin:0 0 8px;color:var(--blue);font-size:11px;font-weight:800;letter-spacing:.15em}h1{margin:0;font-size:38px;line-height:1.08;letter-spacing:-.035em}.subtitle{margin:9px 0 0;color:var(--muted)}.updated{display:flex;align-items:center;gap:7px;color:var(--muted);font-size:13px}.updated i{width:8px;height:8px;border-radius:50%;background:#2aa876;box-shadow:0 0 0 4px #daf3e9}.summary{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;margin-bottom:20px}.summary article{background:#fff;border:1px solid var(--line);border-radius:11px;padding:17px 20px;box-shadow:0 3px 12px #1a2d4609}.summary article:last-child{border-left:4px solid #d92d20}.summary strong{display:block;font-size:28px;margin-bottom:4px}.summary span{color:var(--muted);font-size:13px}.tracker{background:#fff;border:1px solid var(--line);border-radius:13px;overflow:hidden;box-shadow:0 8px 26px #1a2d460e}.section-head{display:flex;justify-content:space-between;align-items:center;gap:24px;padding:22px 24px 18px}h2{margin:0;font-size:23px}.section-note{margin:7px 0 0;color:var(--muted);font-size:13px}.search{min-width:310px;height:40px;display:flex;align-items:center;border:1px solid #cfd8e3;border-radius:8px;padding:0 12px}.search input{border:0;outline:0;width:100%;background:transparent}.filters{display:flex;justify-content:space-between;gap:16px;padding:12px 24px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#fafbfc}.filter-group{display:flex;gap:6px}.filters button{border:1px solid transparent;background:#eef2f6;color:#526176;padding:7px 11px;border-radius:7px;cursor:pointer;white-space:nowrap}.filters button.active{background:var(--ink);color:#fff}.focus button.active{background:#e8f1ff;color:#175cd3;border-color:#bfd3f6}.result-bar{display:flex;justify-content:space-between;padding:10px 18px;color:#7b8798;font-size:12px}.table-wrap{overflow:auto;border-top:1px solid var(--line)}table{width:100%;border-collapse:collapse;min-width:1420px;table-layout:fixed}th{text-align:left;color:#667085;background:#f7f9fb;font-size:12px;padding:12px 14px;border-bottom:1px solid var(--line)}th:nth-child(1){width:100px}th:nth-child(2){width:250px}th:nth-child(3){width:155px}th:nth-child(4){width:105px}th:nth-child(5){width:92px}th:nth-child(6){width:240px}th:nth-child(7){width:260px}th:nth-child(8){width:105px}td{padding:14px;border-bottom:1px solid #edf1f5;font-size:13px;line-height:1.52;vertical-align:top;color:#3f4b5c}.item{color:var(--ink);font-weight:700}details summary{cursor:pointer;list-style:none}details summary::-webkit-details-marker{display:none}details summary:after{content:"＋";float:right;color:#8b98aa;font-weight:400}details[open] summary:after{content:"－"}.evidence{margin-top:10px;padding:10px 11px;background:#f5f8fb;border-radius:7px;color:#657286;font-weight:400;font-size:12px}.tag{display:inline-flex;white-space:nowrap;border-radius:6px;padding:4px 7px;font-size:11px;font-weight:700}.project-golden{color:#8b5d12;background:#fff0ce}.project-senko-bai{color:#155b96;background:#deeffd}.project-ai-tpm{color:#6941a5;background:#eee4ff}.status-进行中{color:#175cd3;background:#eaf2ff}.status-等待中{color:#9a6700;background:#fff4d8}.status-未开始{color:#536073;background:#edf1f5}.status-有风险,.help-需要介入{color:#b42318;background:#fee4e2}.status-已完成{color:#027a48;background:#e5f8ef}.help-需要关注{color:#9a6700;background:#fff4d8}.help-否{color:#027a48;background:#e5f8ef}.overdue{color:var(--danger);font-weight:700}.empty{display:none;padding:42px;text-align:center;color:var(--muted)}footer{padding:18px 4px 0;text-align:right;color:#8590a0;font-size:12px}@media(max-width:900px){main{padding:26px 14px 40px}.hero{display:block}.updated{margin-top:18px}.summary{grid-template-columns:repeat(2,1fr)}.section-head,.filters{align-items:stretch;flex-direction:column}.search{min-width:0}.filter-group{overflow:auto}h1{font-size:31px}}
+</style></head><body><main>
+<header class="hero"><div><p class="eyebrow">PROJECT ACTION TRACKER</p><h1>三项目行动总览</h1><p class="subtitle">Golden · Senko BAI · AI TPM</p></div><span class="updated"><i></i>数据更新至 2026-08-17 09:50</span></header>
+<section class="summary"><article><strong>33</strong><span>全部事项</span></article><article><strong>1</strong><span>有风险</span></article><article><strong>6</strong><span>已逾期</span></article><article><strong>5</strong><span>需要介入</span></article></section>
+<section class="tracker"><div class="section-head"><div><p class="eyebrow">LATEST ACTIONS</p><h2>群聊最新行动清单</h2><p class="section-note">来源于指定项目群聊、群内会议纪要及可见群文档</p></div><label class="search"><input id="search" placeholder="搜索事项、Owner 或来源"></label></div>
+<div class="filters"><div class="filter-group" id="projects"><button class="active" data-value="全部">全部</button><button data-value="Golden">Golden</button><button data-value="Senko BAI">Senko BAI</button><button data-value="AI TPM">AI TPM</button></div><div class="filter-group focus" id="focus"><button class="active" data-value="全部">全部</button><button data-value="需要介入">需要介入</button><button data-value="高优先级">高优先级</button><button data-value="已逾期">已逾期</button></div></div>
+<div class="result-bar"><span id="count">显示 33 条</span><span>点击事项可查看来源与证据</span></div><div class="table-wrap"><table><thead><tr><th>项目</th><th>事项</th><th>Owner</th><th>Deadline</th><th>状态</th><th>卡点</th><th>下一步</th><th>帮助介入</th></tr></thead><tbody>
+<tr data-row data-project="Golden" data-help="否" data-priority="高" data-deadline="" data-search="按脉冲换算距离重新计算 rz rotation 罗廷灿（待确认） 无；已按 atf 微步换算距离后重算 对比 sn8/sn9/sn10 重算结果，重点确认 sn8 x-diff 异常趋势并判断是否需回写结论 vg调试内部群 - golden 系列">
+  <td><span class="tag project-golden">Golden</span></td>
+  <td class="item"><details><summary>按脉冲换算距离重新计算 Rz rotation</summary><div class="evidence"><b>来源：</b>VG调试内部群 - Golden 系列 · 2026-08-17<br><b>证据：</b>罗廷灿 8/14 15:05 上传 SN9、SN10 重算文件并说明换算口径；8/17 09:02 补充上传 SN8_MT_Data_Rotate_True_RZ.csv</div></details></td>
+  <td>罗廷灿（待确认）</td><td class="">待确认</td>
+  <td><span class="tag status-已完成">已完成</span></td><td>无；已按 ATF 微步换算距离后重算</td><td>对比 SN8/SN9/SN10 重算结果，重点确认 SN8 X-diff 异常趋势并判断是否需回写结论</td><td><span class="tag help-否">否</span></td>
+</tr>
+<tr data-row data-project="Golden" data-help="需要关注" data-priority="高" data-deadline="2026-08-14" data-search="方案 b 测试软件加密狗上机调试 罗廷灿（待确认） 依赖加密狗及机台调试环境 完成上机调试，记录 mil 单位配置与验证结果 vg调试内部群 - golden 系列">
+  <td><span class="tag project-golden">Golden</span></td>
+  <td class="item"><details><summary>方案 B 测试软件加密狗上机调试</summary><div class="evidence"><b>来源：</b>VG调试内部群 - Golden 系列 · 2026-08-14<br><b>证据：</b>8/14 群内会议纪要第 3 项</div></details></td>
+  <td>罗廷灿（待确认）</td><td class="overdue">2026-08-14</td>
+  <td><span class="tag status-进行中">进行中</span></td><td>依赖加密狗及机台调试环境</td><td>完成上机调试，记录 mil 单位配置与验证结果</td><td><span class="tag help-需要关注">需要关注</span></td>
+</tr>
+<tr data-row data-project="Golden" data-help="需要关注" data-priority="高" data-deadline="" data-search="socket 式治具详细 dfm 与压紧力 fmin/fmax doe 陈艺能 需定义压力传感器方案及形变/测量 bias 阈值 输出详细 dfm；设计并执行夹紧稳定性与上限阈值 doe vg调试内部群 - golden 系列">
+  <td><span class="tag project-golden">Golden</span></td>
+  <td class="item"><details><summary>Socket 式治具详细 DFM 与压紧力 Fmin/Fmax DOE</summary><div class="evidence"><b>来源：</b>VG调试内部群 - Golden 系列 · 2026-08-14<br><b>证据：</b>参考 B239 DOE_20 spring force DOE_0728.pptx</div></details></td>
+  <td>陈艺能</td><td class="">待确认</td>
+  <td><span class="tag status-进行中">进行中</span></td><td>需定义压力传感器方案及形变/测量 Bias 阈值</td><td>输出详细 DFM；设计并执行夹紧稳定性与上限阈值 DOE</td><td><span class="tag help-需要关注">需要关注</span></td>
+</tr>
+<tr data-row data-project="Golden" data-help="需要关注" data-priority="高" data-deadline="" data-search="搭建 eko 自聚焦 + fau 光源线下测试平台 李勇鑫/机械 结构件固定方案待完成 按王昌奇要求优先把 eko 方案搭好并在线下完成验证 vg调试内部群 - golden 系列">
+  <td><span class="tag project-golden">Golden</span></td>
+  <td class="item"><details><summary>搭建 EKO 自聚焦 + FAU 光源线下测试平台</summary><div class="evidence"><b>来源：</b>VG调试内部群 - Golden 系列 · 2026-08-14<br><b>证据：</b>王昌奇 8/14 21:32：把埃科那一套尽快搭好，offline 来做</div></details></td>
+  <td>李勇鑫/机械</td><td class="">待确认</td>
+  <td><span class="tag status-未开始">未开始</span></td><td>结构件固定方案待完成</td><td>按王昌奇要求优先把 EKO 方案搭好并在线下完成验证</td><td><span class="tag help-需要关注">需要关注</span></td>
+</tr>
+<tr data-row data-project="Golden" data-help="需要关注" data-priority="高" data-deadline="" data-search="借用并验证 eko 镜头转接环 李勇鑫/程琳（待确认） eko 自聚焦镜头与现有物镜接口不匹配 联系三丰/程琳借转接环并验证接口 vg调试内部群 - golden 系列">
+  <td><span class="tag project-golden">Golden</span></td>
+  <td class="item"><details><summary>借用并验证 EKO 镜头转接环</summary><div class="evidence"><b>来源：</b>VG调试内部群 - Golden 系列 · 2026-08-14<br><b>证据：</b>8/14 群内会议纪要第 6 项</div></details></td>
+  <td>李勇鑫/程琳（待确认）</td><td class="">待确认</td>
+  <td><span class="tag status-等待中">等待中</span></td><td>EKO 自聚焦镜头与现有物镜接口不匹配</td><td>联系三丰/程琳借转接环并验证接口</td><td><span class="tag help-需要关注">需要关注</span></td>
+</tr>
+<tr data-row data-project="Golden" data-help="需要介入" data-priority="高" data-deadline="" data-search="排查 sn10/mt8-10 的 16 号孔异常 罗廷灿 多颗 mt 的 16 号孔趋势异常，疑似软件标准坐标值错误 检查 16 号孔配置/代码并复测 vg调试内部群 - golden 系列">
+  <td><span class="tag project-golden">Golden</span></td>
+  <td class="item"><details><summary>排查 SN10/MT8-10 的 16 号孔异常</summary><div class="evidence"><b>来源：</b>VG调试内部群 - Golden 系列 · 2026-08-13<br><b>证据：</b>罗廷灿回复“我检查一下”；尚未见闭环结果</div></details></td>
+  <td>罗廷灿</td><td class="">待确认</td>
+  <td><span class="tag status-有风险">有风险</span></td><td>多颗 MT 的 16 号孔趋势异常，疑似软件标准坐标值错误</td><td>检查 16 号孔配置/代码并复测</td><td><span class="tag help-需要介入">需要介入</span></td>
+</tr>
+<tr data-row data-project="Golden" data-help="需要关注" data-priority="高" data-deadline="2026-08-14" data-search="更新 sn10 重测的 16 号孔图片到在线 ppt 庞广明 重测图片尚未上传，在线 ppt 只有此前版本 上传 sn10 重测图片并标注异常对比 vg调试内部群 - golden 系列">
+  <td><span class="tag project-golden">Golden</span></td>
+  <td class="item"><details><summary>更新 SN10 重测的 16 号孔图片到在线 PPT</summary><div class="evidence"><b>来源：</b>VG调试内部群 - Golden 系列 · 2026-08-14<br><b>证据：</b>王昌奇 8/14 询问在线 PPT 更新情况</div></details></td>
+  <td>庞广明</td><td class="overdue">2026-08-14</td>
+  <td><span class="tag status-未开始">未开始</span></td><td>重测图片尚未上传，在线 PPT 只有此前版本</td><td>上传 SN10 重测图片并标注异常对比</td><td><span class="tag help-需要关注">需要关注</span></td>
+</tr>
+<tr data-row data-project="Golden" data-help="需要关注" data-priority="高" data-deadline="2026-08-13" data-search="完成第 3 台机物料复用标记及不可复用原因 陈艺能/刘元奋/李勇鑫 各模块反馈是否齐全尚未确认 补齐高亮列及不可复用原因；保留 altaitek 转轴/驱动并优先消耗现有贴片电阻 vg调试内部群 - golden 系列">
+  <td><span class="tag project-golden">Golden</span></td>
+  <td class="item"><details><summary>完成第 3 台机物料复用标记及不可复用原因</summary><div class="evidence"><b>来源：</b>VG调试内部群 - Golden 系列 · 2026-08-14<br><b>证据：</b>廖龙宁 8/14 17:14 明确保留转轴与驱动，后续退库；贴片电阻新需求优先消耗</div></details></td>
+  <td>陈艺能/刘元奋/李勇鑫</td><td class="overdue">2026-08-13</td>
+  <td><span class="tag status-等待中">等待中</span></td><td>各模块反馈是否齐全尚未确认</td><td>补齐高亮列及不可复用原因；保留 AltaiTek 转轴/驱动并优先消耗现有贴片电阻</td><td><span class="tag help-需要关注">需要关注</span></td>
+</tr>
+<tr data-row data-project="Golden" data-help="需要关注" data-priority="高" data-deadline="2026-08-27" data-search="第 3 台机完成设计与下单 王逸/各模块 受物料复用结论与滑台交期影响 完成设计评审、bom 与下单；将滑台交期压缩至 4 周内 vg调试内部群 - golden 系列">
+  <td><span class="tag project-golden">Golden</span></td>
+  <td class="item"><details><summary>第 3 台机完成设计与下单</summary><div class="evidence"><b>来源：</b>VG调试内部群 - Golden 系列 · 2026-08-13<br><b>证据：</b>群内历史计划与项目进度表</div></details></td>
+  <td>王逸/各模块</td><td class="">2026-08-27</td>
+  <td><span class="tag status-进行中">进行中</span></td><td>受物料复用结论与滑台交期影响</td><td>完成设计评审、BOM 与下单；将滑台交期压缩至 4 周内</td><td><span class="tag help-需要关注">需要关注</span></td>
+</tr>
+<tr data-row data-project="Golden" data-help="否" data-priority="高" data-deadline="2026-10-31" data-search="第 3 台机完成调试与稳定性验证 王逸/各模块 依赖设计下单、装配及关键物料交期 按模块建立调试/稳定性测试计划并周跟踪 vg调试内部群 - golden 系列">
+  <td><span class="tag project-golden">Golden</span></td>
+  <td class="item"><details><summary>第 3 台机完成调试与稳定性验证</summary><div class="evidence"><b>来源：</b>VG调试内部群 - Golden 系列 · 2026-08-13<br><b>证据：</b>项目里程碑</div></details></td>
+  <td>王逸/各模块</td><td class="">2026-10-31</td>
+  <td><span class="tag status-未开始">未开始</span></td><td>依赖设计下单、装配及关键物料交期</td><td>按模块建立调试/稳定性测试计划并周跟踪</td><td><span class="tag help-否">否</span></td>
+</tr>
+<tr data-row data-project="Golden" data-help="需要关注" data-priority="高" data-deadline="" data-search="完成拼图软件/算法及 4 个 mt 趋势一致性验证 罗廷灿 需兼顾畸变校正、亚像素几何测量与拼接稳定性 先验证 4 个 mt 趋势一致，再部署软件上机 图像拼接群">
+  <td><span class="tag project-golden">Golden</span></td>
+  <td class="item"><details><summary>完成拼图软件/算法及 4 个 MT 趋势一致性验证</summary><div class="evidence"><b>来源：</b>图像拼接群 · 2026-08-12<br><b>证据：</b>参考拼接设计说明与校正代码包</div></details></td>
+  <td>罗廷灿</td><td class="">待确认</td>
+  <td><span class="tag status-进行中">进行中</span></td><td>需兼顾畸变校正、亚像素几何测量与拼接稳定性</td><td>先验证 4 个 MT 趋势一致，再部署软件上机</td><td><span class="tag help-需要关注">需要关注</span></td>
+</tr>
+<tr data-row data-project="Golden" data-help="需要关注" data-priority="高" data-deadline="" data-search="拼图软件上机后执行不同 force doe 陈艺能/罗廷灿（待确认） 扭力扳手已到机台旁，仍依赖拼图软件及 4 个 mt 趋势验证完成 软件验证通过后定义 force 梯度并使用现有治具采集数据 vg调试内部群 - golden 系列/图像拼接群">
+  <td><span class="tag project-golden">Golden</span></td>
+  <td class="item"><details><summary>拼图软件上机后执行不同 force DOE</summary><div class="evidence"><b>来源：</b>VG调试内部群 - Golden 系列/图像拼接群 · 2026-08-14<br><b>证据：</b>陈艺能 8/14 18:29：扭力扳手已放机台旁边</div></details></td>
+  <td>陈艺能/罗廷灿（待确认）</td><td class="">待确认</td>
+  <td><span class="tag status-等待中">等待中</span></td><td>扭力扳手已到机台旁，仍依赖拼图软件及 4 个 MT 趋势验证完成</td><td>软件验证通过后定义 force 梯度并使用现有治具采集数据</td><td><span class="tag help-需要关注">需要关注</span></td>
+</tr>
+<tr data-row data-project="Golden" data-help="否" data-priority="中" data-deadline="" data-search="输出 image-domain 测试流程与顺序文档 张振/罗廷灿 流程与接口责任尚需对齐 确认测试顺序并将文档分享至群内 vg调试内部群 - golden 系列">
+  <td><span class="tag project-golden">Golden</span></td>
+  <td class="item"><details><summary>输出 Image-domain 测试流程与顺序文档</summary><div class="evidence"><b>来源：</b>VG调试内部群 - Golden 系列 · 2026-08-14<br><b>证据：</b>置顶会议记录第 7 项</div></details></td>
+  <td>张振/罗廷灿</td><td class="">待确认</td>
+  <td><span class="tag status-进行中">进行中</span></td><td>流程与接口责任尚需对齐</td><td>确认测试顺序并将文档分享至群内</td><td><span class="tag help-否">否</span></td>
+</tr>
+<tr data-row data-project="Golden" data-help="需要关注" data-priority="中" data-deadline="" data-search="补采购 20× 物镜 王逸/采购（待确认） 采购责任人与交期尚未确认 补采购单并回填预计到料日期 vg调试内部群 - golden 系列">
+  <td><span class="tag project-golden">Golden</span></td>
+  <td class="item"><details><summary>补采购 20× 物镜</summary><div class="evidence"><b>来源：</b>VG调试内部群 - Golden 系列 · 2026-08-14<br><b>证据：</b>置顶会议记录第 8 项</div></details></td>
+  <td>王逸/采购（待确认）</td><td class="">待确认</td>
+  <td><span class="tag status-未开始">未开始</span></td><td>采购责任人与交期尚未确认</td><td>补采购单并回填预计到料日期</td><td><span class="tag help-需要关注">需要关注</span></td>
+</tr>
+<tr data-row data-project="Golden" data-help="需要关注" data-priority="高" data-deadline="" data-search="分析 grr x/y 标准差与 fiberholex 质量 庞广明 fiberholex 质量较差，需判断算法/成像/样品贡献 基于 0814 update.csv 输出 x/y 标准差图和 fiberholex 异常分析 golden 数据处理小群">
+  <td><span class="tag project-golden">Golden</span></td>
+  <td class="item"><details><summary>分析 GRR X/Y 标准差与 FiberholeX 质量</summary><div class="evidence"><b>来源：</b>Golden 数据处理小群 · 2026-08-14<br><b>证据：</b>8/14 15:25 上传 0814 update.csv，15:31 补充图片；尚未见结论</div></details></td>
+  <td>庞广明</td><td class="">待确认</td>
+  <td><span class="tag status-进行中">进行中</span></td><td>FiberholeX 质量较差，需判断算法/成像/样品贡献</td><td>基于 0814 update.csv 输出 X/Y 标准差图和 FiberholeX 异常分析</td><td><span class="tag help-需要关注">需要关注</span></td>
+</tr>
+<tr data-row data-project="Golden" data-help="否" data-priority="中" data-deadline="" data-search="持续维护 golden 合并数据及最新版本 庞广明 多日期 csv/excel 分散，需防止版本混用 以日期命名维护唯一最新版本并记录数据口径 golden 数据处理小群">
+  <td><span class="tag project-golden">Golden</span></td>
+  <td class="item"><details><summary>持续维护 Golden 合并数据及最新版本</summary><div class="evidence"><b>来源：</b>Golden 数据处理小群 · 2026-08-14<br><b>证据：</b>最新可见文件：0814 update.csv</div></details></td>
+  <td>庞广明</td><td class="">待确认</td>
+  <td><span class="tag status-进行中">进行中</span></td><td>多日期 CSV/Excel 分散，需防止版本混用</td><td>以日期命名维护唯一最新版本并记录数据口径</td><td><span class="tag help-否">否</span></td>
+</tr>
+<tr data-row data-project="Golden" data-help="需要关注" data-priority="高" data-deadline="" data-search="开发 v 槽与 fau 图像拼接（矩阵/coherent） 罗廷灿 需与现有拼图算法及上机计划协调 明确矩阵与 coherent 两部分实现方案并给出开发计划 vg调试内部群 - golden 系列">
+  <td><span class="tag project-golden">Golden</span></td>
+  <td class="item"><details><summary>开发 V 槽与 FAU 图像拼接（矩阵/Coherent）</summary><div class="evidence"><b>来源：</b>VG调试内部群 - Golden 系列 · 2026-08-14<br><b>证据：</b>王昌奇 8/14 21:32：V 槽和 FAU 图像拼接也需要开发，矩阵和 Coherent 需尽快完成</div></details></td>
+  <td>罗廷灿</td><td class="">待确认</td>
+  <td><span class="tag status-未开始">未开始</span></td><td>需与现有拼图算法及上机计划协调</td><td>明确矩阵与 Coherent 两部分实现方案并给出开发计划</td><td><span class="tag help-需要关注">需要关注</span></td>
+</tr>
+<tr data-row data-project="Senko BAI" data-help="需要介入" data-priority="高" data-deadline="2026-08-14" data-search="确认 bai-f 完成加速装配并转移至科姆龙 王逸/肖友灯（待确认） 群内仅见预计今日上午转移，尚未见完成回执 确认设备转移、上电与可调试状态并回群 fau-mt senko mpc doe">
+  <td><span class="tag project-senko-bai">Senko BAI</span></td>
+  <td class="item"><details><summary>确认 BAI-F 完成加速装配并转移至科姆龙</summary><div class="evidence"><b>来源：</b>FAU-MT Senko MPC DOE · 2026-08-13<br><b>证据：</b>设备此前已上电；转移完成情况待确认</div></details></td>
+  <td>王逸/肖友灯（待确认）</td><td class="overdue">2026-08-14</td>
+  <td><span class="tag status-等待中">等待中</span></td><td>群内仅见预计今日上午转移，尚未见完成回执</td><td>确认设备转移、上电与可调试状态并回群</td><td><span class="tag help-需要介入">需要介入</span></td>
+</tr>
+<tr data-row data-project="Senko BAI" data-help="需要关注" data-priority="高" data-deadline="" data-search="选择支持约 1000 次插拔的 air-gap connector 张振/杨树鹏/李勇鑫 ar mpo 镀膜线缆预计今日下午到；双侧 mpo 对接头、air-gap 方案适用性与约 1000 次插拔寿命仍待确认 联系启星并确认双侧 mpo 对接头；收样后验证接口、插损与耐久，安排供应商现场培训产品及应用场景 fau-mt senko mpc doe">
+  <td><span class="tag project-senko-bai">Senko BAI</span></td>
+  <td class="item"><details><summary>选择支持约 1000 次插拔的 air-gap connector</summary><div class="evidence"><b>来源：</b>FAU-MT Senko MPC DOE · 2026-08-17<br><b>证据：</b>王昌奇 8/17 09:33 要求联系启星并确认 AR air-gap MPO 对接器或线缆；李勇鑫 09:41：现成 AR MPO 镀膜线缆今天下午能到；王昌奇约 09:50 要求确认双侧 MPO 对接头并安排供应商培训</div></details></td>
+  <td>张振/杨树鹏/李勇鑫</td><td class="">待确认</td>
+  <td><span class="tag status-进行中">进行中</span></td><td>AR MPO 镀膜线缆预计今日下午到；双侧 MPO 对接头、air-gap 方案适用性与约 1000 次插拔寿命仍待确认</td><td>联系启星并确认双侧 MPO 对接头；收样后验证接口、插损与耐久，安排供应商现场培训产品及应用场景</td><td><span class="tag help-需要关注">需要关注</span></td>
+</tr>
+<tr data-row data-project="Senko BAI" data-help="需要介入" data-priority="高" data-deadline="2026-08-13" data-search="完成 fa 样品 mpo 端接并寄回 李勇鑫/吴经理 样品一端裸纤无法耦合；未见已寄回确认 确认 mpo 安装完成、寄回物流与到样时间 fiber array 出光角度一致性 光学方案探讨">
+  <td><span class="tag project-senko-bai">Senko BAI</span></td>
+  <td class="item"><details><summary>完成 FA 样品 MPO 端接并寄回</summary><div class="evidence"><b>来源：</b>Fiber array 出光角度一致性 光学方案探讨 · 2026-08-11<br><b>证据：</b>原预计周三/周四处理并寄回</div></details></td>
+  <td>李勇鑫/吴经理</td><td class="overdue">2026-08-13</td>
+  <td><span class="tag status-等待中">等待中</span></td><td>样品一端裸纤无法耦合；未见已寄回确认</td><td>确认 MPO 安装完成、寄回物流与到样时间</td><td><span class="tag help-需要介入">需要介入</span></td>
+</tr>
+<tr data-row data-project="Senko BAI" data-help="需要关注" data-priority="中" data-deadline="" data-search="完成相机样品盖章/申请协调 李勇鑫 依赖供应商样品协调和内部盖章流程 拿到相机样品并回填预计到样时间 fiber array 出光角度一致性 光学方案探讨">
+  <td><span class="tag project-senko-bai">Senko BAI</span></td>
+  <td class="item"><details><summary>完成相机样品盖章/申请协调</summary><div class="evidence"><b>来源：</b>Fiber array 出光角度一致性 光学方案探讨 · 2026-08-12<br><b>证据：</b>5 号镜头已到</div></details></td>
+  <td>李勇鑫</td><td class="">待确认</td>
+  <td><span class="tag status-进行中">进行中</span></td><td>依赖供应商样品协调和内部盖章流程</td><td>拿到相机样品并回填预计到样时间</td><td><span class="tag help-需要关注">需要关注</span></td>
+</tr>
+<tr data-row data-project="Senko BAI" data-help="需要关注" data-priority="高" data-deadline="" data-search="先做可见光可行性验证，再切换 1310 nm 红外方案 杨树鹏/易睿熙 薄膜透过率不足，红外相机需借样、镜头待选型 先用可见光 + mpc 搭建 doe；同步准备高透过率薄膜、红外相机与镜头 fiber array 出光角度一致性 beam waist mfd 光学方案探讨">
+  <td><span class="tag project-senko-bai">Senko BAI</span></td>
+  <td class="item"><details><summary>先做可见光可行性验证，再切换 1310 nm 红外方案</summary><div class="evidence"><b>来源：</b>Fiber array 出光角度一致性 Beam Waist MFD 光学方案探讨 · 2026-08-14<br><b>证据：</b>杨树鹏 8/14 14:33 与张振 15:26 汇总：先可见光验证，再准备红外相机/镜头及高透膜</div></details></td>
+  <td>杨树鹏/易睿熙</td><td class="">待确认</td>
+  <td><span class="tag status-进行中">进行中</span></td><td>薄膜透过率不足，红外相机需借样、镜头待选型</td><td>先用可见光 + MPC 搭建 DOE；同步准备高透过率薄膜、红外相机与镜头</td><td><span class="tag help-需要关注">需要关注</span></td>
+</tr>
+<tr data-row data-project="Senko BAI" data-help="需要关注" data-priority="中" data-deadline="" data-search="评审 1×48 通道光源性能并关闭遗留问题 王昌奇/光学团队（待确认） 报告已发布，但性能结论/遗留项未形成群内闭环 从报告提取关键指标、问题和责任人并形成结论 fau-mt senko mpc doe">
+  <td><span class="tag project-senko-bai">Senko BAI</span></td>
+  <td class="item"><details><summary>评审 1×48 通道光源性能并关闭遗留问题</summary><div class="evidence"><b>来源：</b>FAU-MT Senko MPC DOE · 2026-08-14<br><b>证据：</b>来源：1×48通道光源性能报告260812.pptx</div></details></td>
+  <td>王昌奇/光学团队（待确认）</td><td class="">待确认</td>
+  <td><span class="tag status-进行中">进行中</span></td><td>报告已发布，但性能结论/遗留项未形成群内闭环</td><td>从报告提取关键指标、问题和责任人并形成结论</td><td><span class="tag help-需要关注">需要关注</span></td>
+</tr>
+<tr data-row data-project="Senko BAI" data-help="需要关注" data-priority="高" data-deadline="" data-search="搭建 5 距离 cmos 光斑采集 doe 平台并开发算法 度申/李勇鑫/光学团队（待确认） 需外置 cmos、修改 mpc 夹具并保证 mpc 与相机姿态平行 确定含 1 mm 近场与远场的 5 个非线性距离，完成夹具改造、平台搭建与算法开发 fiber array 出光角度一致性 beam waist mfd 光学方案探讨">
+  <td><span class="tag project-senko-bai">Senko BAI</span></td>
+  <td class="item"><details><summary>搭建 5 距离 CMOS 光斑采集 DOE 平台并开发算法</summary><div class="evidence"><b>来源：</b>Fiber array 出光角度一致性 Beam Waist MFD 光学方案探讨 · 2026-08-14<br><b>证据：</b>张振 8/14 15:26 群内总结的 DOE 方案</div></details></td>
+  <td>度申/李勇鑫/光学团队（待确认）</td><td class="">待确认</td>
+  <td><span class="tag status-未开始">未开始</span></td><td>需外置 CMOS、修改 MPC 夹具并保证 MPC 与相机姿态平行</td><td>确定含 1 mm 近场与远场的 5 个非线性距离，完成夹具改造、平台搭建与算法开发</td><td><span class="tag help-需要关注">需要关注</span></td>
+</tr>
+<tr data-row data-project="Senko BAI" data-help="需要关注" data-priority="高" data-deadline="2026-08-14" data-search="补发 senko 会议纪要的最新 dfm pdf 附件 王逸/张振（待确认） 纪要已发出，但最新 dfm pdf 附件尚待补充确认 将 jpt bai for senko mpc dfm-v3.0 转为 pdf 补发，并确认 gavin 收到 fau-mt senko mpc doe">
+  <td><span class="tag project-senko-bai">Senko BAI</span></td>
+  <td class="item"><details><summary>补发 Senko 会议纪要的最新 DFM PDF 附件</summary><div class="evidence"><b>来源：</b>FAU-MT Senko MPC DOE · 2026-08-14<br><b>证据：</b>王逸 8/14 17:46：纪要已发出，稍后补文件；张振说明该文件为最新 BAI-F DFM</div></details></td>
+  <td>王逸/张振（待确认）</td><td class="overdue">2026-08-14</td>
+  <td><span class="tag status-进行中">进行中</span></td><td>纪要已发出，但最新 DFM PDF 附件尚待补充确认</td><td>将 JPT BAI for Senko MPC DFM-V3.0 转为 PDF 补发，并确认 Gavin 收到</td><td><span class="tag help-需要关注">需要关注</span></td>
+</tr>
+<tr data-row data-project="AI TPM" data-help="需要关注" data-priority="高" data-deadline="" data-search="将 ftp 已有资料按存储规范迁移到 box 庞广明 历史文件分类、命名和版本清理工作量较大 按项目逐批迁移；只保留 latest/final 版本并完成目录核对 与欧诗祥私聊">
+  <td><span class="tag project-ai-tpm">AI TPM</span></td>
+  <td class="item"><details><summary>将 FTP 已有资料按存储规范迁移到 Box</summary><div class="evidence"><b>来源：</b>与欧诗祥私聊 · 2026-08-13<br><b>证据：</b>FTP 仅用于一次性迁移；敏感凭据未纳入</div></details></td>
+  <td>庞广明</td><td class="">待确认</td>
+  <td><span class="tag status-进行中">进行中</span></td><td>历史文件分类、命名和版本清理工作量较大</td><td>按项目逐批迁移；只保留 latest/final 版本并完成目录核对</td><td><span class="tag help-需要关注">需要关注</span></td>
+</tr>
+<tr data-row data-project="AI TPM" data-help="需要介入" data-priority="高" data-deadline="" data-search="选择 1–2 个 ai tpm mvp 场景 庞广明/欧诗祥 完整方案范围过宽，尚未锁定优先场景 基于价值、数据可得性和落地难度确定首批场景 与欧诗祥私聊">
+  <td><span class="tag project-ai-tpm">AI TPM</span></td>
+  <td class="item"><details><summary>选择 1–2 个 AI TPM MVP 场景</summary><div class="evidence"><b>来源：</b>与欧诗祥私聊 · 2026-08-13<br><b>证据：</b>先小范围跑通，再扩展职责域</div></details></td>
+  <td>庞广明/欧诗祥</td><td class="">待确认</td>
+  <td><span class="tag status-进行中">进行中</span></td><td>完整方案范围过宽，尚未锁定优先场景</td><td>基于价值、数据可得性和落地难度确定首批场景</td><td><span class="tag help-需要介入">需要介入</span></td>
+</tr>
+<tr data-row data-project="AI TPM" data-help="需要关注" data-priority="高" data-deadline="" data-search="按配置步骤搭建 ai tpm 智能体 庞广明 依赖 box 目录、知识材料和 mvp 场景确认 依据配置步骤完成首版配置与测试 与欧诗祥私聊">
+  <td><span class="tag project-ai-tpm">AI TPM</span></td>
+  <td class="item"><details><summary>按配置步骤搭建 AI TPM 智能体</summary><div class="evidence"><b>来源：</b>与欧诗祥私聊 · 2026-08-13<br><b>证据：</b>配置文件已由欧诗祥分享</div></details></td>
+  <td>庞广明</td><td class="">待确认</td>
+  <td><span class="tag status-未开始">未开始</span></td><td>依赖 Box 目录、知识材料和 MVP 场景确认</td><td>依据配置步骤完成首版配置与测试</td><td><span class="tag help-需要关注">需要关注</span></td>
+</tr>
+<tr data-row data-project="AI TPM" data-help="需要关注" data-priority="中" data-deadline="" data-search="分别提取 box 知识卡片后合并去重 庞广明/欧诗祥 知识卡口径、粒度与去重规则需统一 双方独立处理一批资料，比较结果后确定合并/去重规则 与欧诗祥私聊">
+  <td><span class="tag project-ai-tpm">AI TPM</span></td>
+  <td class="item"><details><summary>分别提取 Box 知识卡片后合并去重</summary><div class="evidence"><b>来源：</b>与欧诗祥私聊 · 2026-08-13<br><b>证据：</b>双方并行处理，再汇总</div></details></td>
+  <td>庞广明/欧诗祥</td><td class="">待确认</td>
+  <td><span class="tag status-未开始">未开始</span></td><td>知识卡口径、粒度与去重规则需统一</td><td>双方独立处理一批资料，比较结果后确定合并/去重规则</td><td><span class="tag help-需要关注">需要关注</span></td>
+</tr>
+<tr data-row data-project="AI TPM" data-help="需要介入" data-priority="高" data-deadline="" data-search="推动所有历史项目资料按模板持续上传 各项目 dri（庞广明跟踪） 项目范围广、资料完整度和版本质量不一 按 vcsel/camera/pd 等类别建立清单，每天小批量补齐 有源-ai 智能体研究">
+  <td><span class="tag project-ai-tpm">AI TPM</span></td>
+  <td class="item"><details><summary>推动所有历史项目资料按模板持续上传</summary><div class="evidence"><b>来源：</b>有源-AI 智能体研究 · 2026-08-14<br><b>证据：</b>覆盖全部项目，不只少数项目</div></details></td>
+  <td>各项目 DRI（庞广明跟踪）</td><td class="">待确认</td>
+  <td><span class="tag status-进行中">进行中</span></td><td>项目范围广、资料完整度和版本质量不一</td><td>按 VCSEL/Camera/PD 等类别建立清单，每天小批量补齐</td><td><span class="tag help-需要介入">需要介入</span></td>
+</tr>
+<tr data-row data-project="AI TPM" data-help="需要关注" data-priority="高" data-deadline="" data-search="执行知识库文件治理规则 各项目 dri（庞广明跟踪） 命名、分类、最终版标识和 sop 拆分执行不一致 抽查分类、版本标识与 sop 拆分情况 有源-ai 智能体研究">
+  <td><span class="tag project-ai-tpm">AI TPM</span></td>
+  <td class="item"><details><summary>执行知识库文件治理规则</summary><div class="evidence"><b>来源：</b>有源-AI 智能体研究 · 2026-08-14<br><b>证据：</b>支持常见文档与图片；敏感凭据不纳入</div></details></td>
+  <td>各项目 DRI（庞广明跟踪）</td><td class="">待确认</td>
+  <td><span class="tag status-进行中">进行中</span></td><td>命名、分类、最终版标识和 SOP 拆分执行不一致</td><td>抽查分类、版本标识与 SOP 拆分情况</td><td><span class="tag help-需要关注">需要关注</span></td>
+</tr>
+<tr data-row data-project="AI TPM" data-help="否" data-priority="中" data-deadline="" data-search="维护项目知识库收集情况与 ai 专业名词表 庞广明 需持续更新并追踪 dri 完成度 每次收拢后更新清单，标注缺失项目与下一责任人 有源-ai 智能体研究">
+  <td><span class="tag project-ai-tpm">AI TPM</span></td>
+  <td class="item"><details><summary>维护项目知识库收集情况与 AI 专业名词表</summary><div class="evidence"><b>来源：</b>有源-AI 智能体研究 · 2026-08-14<br><b>证据：</b>AI 专业名词解释表已加入群内记录</div></details></td>
+  <td>庞广明</td><td class="">待确认</td>
+  <td><span class="tag status-进行中">进行中</span></td><td>需持续更新并追踪 DRI 完成度</td><td>每次收拢后更新清单，标注缺失项目与下一责任人</td><td><span class="tag help-否">否</span></td>
+</tr>
+<tr data-row data-project="AI TPM" data-help="需要关注" data-priority="高" data-deadline="" data-search="搭建 box 目录、gpt 设计与 skill 工作区 庞广明/欧诗祥 需与首批 mvp 场景及权限边界对齐 先完成最小目录与权限设计，再建立测试工作区 与欧诗祥私聊">
+  <td><span class="tag project-ai-tpm">AI TPM</span></td>
+  <td class="item"><details><summary>搭建 Box 目录、GPT 设计与 Skill 工作区</summary><div class="evidence"><b>来源：</b>与欧诗祥私聊 · 2026-08-13<br><b>证据：</b>作为 AI TPM 首版落地底座</div></details></td>
+  <td>庞广明/欧诗祥</td><td class="">待确认</td>
+  <td><span class="tag status-未开始">未开始</span></td><td>需与首批 MVP 场景及权限边界对齐</td><td>先完成最小目录与权限设计，再建立测试工作区</td><td><span class="tag help-需要关注">需要关注</span></td>
+</tr></tbody></table><div id="empty" class="empty">没有符合当前筛选条件的事项</div></div></section>
+<footer>单文件 HTML · 可离线打开 · 待确认项不会擅自补全 Owner 或 Deadline</footer></main>
+<script>
+let project="全部",focus="全部";const rows=[...document.querySelectorAll("[data-row]")],search=document.querySelector("#search");
+function apply(){const q=search.value.trim().toLowerCase();let shown=0;for(const row of rows){const p=project==="全部"||row.dataset.project===project;const f=focus==="全部"||(focus==="需要介入"&&row.dataset.help==="需要介入")||(focus==="高优先级"&&row.dataset.priority==="高")||(focus==="已逾期"&&row.dataset.deadline&&row.dataset.deadline<"2026-08-17");const ok=p&&f&&row.dataset.search.includes(q);row.hidden=!ok;if(ok)shown++}document.querySelector("#count").textContent="显示 "+shown+" 条";document.querySelector("#empty").style.display=shown?"none":"block"}
+function bind(id,setter){document.querySelectorAll("#"+id+" button").forEach(button=>button.onclick=()=>{document.querySelectorAll("#"+id+" button").forEach(b=>b.classList.remove("active"));button.classList.add("active");setter(button.dataset.value);apply()})}bind("projects",v=>project=v);bind("focus",v=>focus=v);search.oninput=apply;
+</script></body></html>
